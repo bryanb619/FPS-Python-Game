@@ -1,6 +1,47 @@
+# Main FILE
+
 # Pygame import
 import pygame 
-# Window initialization
-pygame.int()
+# import settings from AppSettings.py
+from AppSettings import * 
+# import player Settings
+from Player import *
 
-ss = pygame.display.set_mode(())
+import math
+
+# Window initialization
+pygame.init()
+
+ss = pygame.display.set_mode((Width, Height))
+
+# Screen frames
+clock = pygame.time.Clock()
+
+# internal variable
+Player = PlayerMovement()
+
+# App close system
+
+while True:
+    for event in pygame.event.get():
+        # if quit is pressed, app will quit
+        if event.type == pygame.QUIT:
+            # Kill app
+            exit()
+    # in Player.py get movement function  
+    Player.movement()
+    #Screen fill color
+    ss.fill(Black)
+    
+    # Player (for the moment!)
+    pygame.draw.circle(ss,Green,Player.position,12)
+    
+    pygame.draw.line(ss, Green, Player.position,(Player.x + Width * math.cos(Player.angle),Player.y + Width * math.sin(Player.angle)))
+    
+    
+    pygame.display.flip()
+    # Game FPS Standard
+    clock.tick(Fps)
+    
+    
+            
