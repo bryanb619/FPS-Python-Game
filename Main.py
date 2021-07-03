@@ -7,6 +7,8 @@ from AppSettings import *
 # import player Settings
 from Player import *
 
+from Map import GameWorld
+
 import math
 
 # Window initialization
@@ -36,11 +38,12 @@ while True:
     # Player (for the moment!)
     pygame.draw.circle(ss,Green,Player.position,12)
     
+    #  Line 
     pygame.draw.line(ss, Green, Player.position,(Player.x + Width * math.cos(Player.angle),Player.y + Width * math.sin(Player.angle)))
     
-    
+    #
     pygame.display.flip()
-    # Game FPS Standard
+    # Game FPS Standard 60 FPS
     clock.tick(Fps)
     
     
