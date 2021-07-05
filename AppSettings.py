@@ -25,14 +25,15 @@ playerSpeed = 2
 # Casting Settings
 
 # Player field of view
-pView = math.pi
+pView = math.pi / 3
 #
-HalfView = pView
+HalfView = pView / 2
 # Number of rays
 rays = 120
 # delta = field of view / rays
 deltaAngle = pView / rays
-
+# Maximum Depth
+FullDepth = 800
 
 # Colors (RGB CODES)
 
