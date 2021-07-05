@@ -44,14 +44,14 @@ while True:
     RayCasting(ss, Player.position, Player.angle)
     
     # Player (for the moment!)
-    pygame.draw.circle(ss,Green,(int(Player.x), int(Player.y)),12)
+    #pygame.draw.circle(ss,Green,(int(Player.x), int(Player.y)),12)
     
     #  Line 
-    pygame.draw.line(ss, Green, Player.position,(Player.x + Width * math.cos(Player.angle),Player.y + Width * math.sin(Player.angle)))
+    #pygame.draw.line(ss, Green, Player.position,(Player.x + Width * math.cos(Player.angle),Player.y + Width * math.sin(Player.angle)))
     
     # Map Drawing
-    for x,y in GameWorld:
-        pygame.draw.rect(ss, Gray, (x,y, Tile, Tile), 2)
+    #for x,y in GameWorld:
+        #pygame.draw.rect(ss, Gray, (x,y, Tile, Tile), 2)
     
     # 
     pygame.display.flip()

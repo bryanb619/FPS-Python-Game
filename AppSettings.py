@@ -4,8 +4,8 @@
 import math
 
 # Screen Settings
-Width =1200 # Width of screen
-Height = 800 # Height of screen
+Width =800 # Width of screen
+Height = 600 # Height of screen
 # Frames per second
 Fps = 60
 # Game Tiles
@@ -26,7 +26,7 @@ playerSpeed = 2
 
 # Player field of view
 pView = math.pi / 3
-#
+# View divided per 2
 HalfView = pView / 2
 # Number of rays
 rays = 120
@@ -34,6 +34,12 @@ rays = 120
 deltaAngle = pView / rays
 # Maximum Depth
 FullDepth = 800
+
+# 3D VIEW Modification
+Distance = rays / (2 * math.tan(HalfView))
+# Calculation of wall distance & Height
+projC = Distance *Tile
+Scale = Width // rays
 
 # Colors (RGB CODES)
 
