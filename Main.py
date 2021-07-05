@@ -1,19 +1,22 @@
 # Main FILE
 
+# imports
+
 # Pygame import
 import pygame 
 # import settings from AppSettings.py
 from AppSettings import * 
 # import player Settings
 from Player import *
-
+# Import Game Map
 from Map import GameWorld
-
+# for mathematics
 import math
 
 # Window initialization
 pygame.init()
 
+# Display set (Width & Height)
 ss = pygame.display.set_mode((Width, Height))
 
 # Screen frames
@@ -36,10 +39,15 @@ while True:
     ss.fill(Black)
     
     # Player (for the moment!)
-    pygame.draw.circle(ss,Green,Player.position,12)
+    pygame.draw.circle(ss,Green,(int(Player.x), int(Player.y)),12)
     
     #  Line 
     pygame.draw.line(ss, Green, Player.position,(Player.x + Width * math.cos(Player.angle),Player.y + Width * math.sin(Player.angle)))
+    
+    
+    #
+    for x,y in GameWorld:
+        pygame.draw.rect(ss, Gray, (x,y, Tile, Tile), 2)
     
     #
     pygame.display.flip()

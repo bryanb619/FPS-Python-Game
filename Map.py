@@ -1,3 +1,4 @@
+# Map File
 from AppSettings import *
 
 text_map = [

@@ -1,12 +1,14 @@
-# General settings and data variables
+# General settings and data variables for game configuration
+
+#
+import math
 
 # Screen Settings
-Width = 800 # Width of screen
-Height = 600 # Height of screen
+Width =1200 # Width of screen
+Height = 800 # Height of screen
 # Frames per second
 Fps = 60
-
-# 
+# Game Tiles
 Tile = 100
 
 # Centering player
@@ -15,12 +17,28 @@ HalfHeight = Height // 2
 
 # Player Settings
 playerPosition = (HalfWidth, HalfHeight)
+#
 playerAngle = 0
+# speed
 playerSpeed = 2
+
+# Casting Settings
+
+# Player field of view
+pView = math.pi
+#
+HalfView = pView
+# Number of rays
+rays = 120
+# delta = field of view / rays
+deltaAngle = pView / rays
+
 
 # Colors (RGB CODES)
 
-Black = (0,0,0)
-White = (255,255,255)
+Black = (0,0,0) # Black
+White = (255,255,255) # White
 
-Green = (0,220,0)
+# Other collors
+Green = (0,220,0) # Green
+Gray = (128,128,128) # Gray
