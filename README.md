@@ -2,9 +2,21 @@
 
 ## Aplicação FPS Like environment
  
-### Desenvolvido por: 
+#### Autores do projeto: 
 
-##### Rafaela Henriques 22005252
-##### Sónia Raposo 22000344
-##### Steven Hall 22001753
+###### Rafaela Henriques 22005252 - rafaelahenriques
+###### Sónia Raposo 22000344 - Sonia-Raposo 
+###### Steven Hall 22001753 - bryanb619
+
+
+### Trabalho realizado:
+
+##### Movimentos/ Rotação 
+##### 
+##### Cenário
+##### Implementação 3D
+
+### Contribuições individuais
+
+####
 
