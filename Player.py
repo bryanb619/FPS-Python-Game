@@ -31,6 +31,8 @@ class PlayerMovement:
         keys = pygame.key.get_pressed()
         # Movements 
         
+        # Keyboard Controls
+        
         # Forward
         if keys[pygame.K_w]:
             self.x += playerSpeed * cos_m
@@ -57,5 +59,10 @@ class PlayerMovement:
         # Right       
         if keys[pygame.K_RIGHT]:
             self.angle += 0.02
+            
+        # Mouse Controls
+        
+        
+        
             
         
