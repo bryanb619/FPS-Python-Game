@@ -1,21 +1,28 @@
 # Map File
 from AppSettings import *
 
+"""Criação do Mapa em Text Map"""
+
 text_map = [
-    'WWWWWWWWWWWW',
-    'W......W...W',
-    'W..WWW...W.W',
-    'W....W..WW.W',
-    'W..W....W..W',
-    'W..W...WWW.W',
-    'W....W.....W',
-    'WWWWWWWWWWWW'
-]   
+    'IIIIIIIIIIII',
+    'I......I...I',
+    'I..III...I.I',
+    'I....I..I..I',
+    'I..I....I..I',
+    'I..I...III.I',
+    'I..........I',
+    'IIIIIIIIIIII'
+]
 
 
-GameWorld = set()
-for j, row in enumerate(text_map):
-    # Coordinates enumerate, ( Y COORDINATES)
-    for i, char in enumerate(row):
-        if char == "W":
-            GameWorld.add((i * Tile, j * Tile ))
+"""Transform Text Map in Walls for every "I"""
+
+GameMap = set()
+
+for b, row in enumerate(text_map):
+    for a, char in enumerate(row):
+        if char == 'I':
+            GameMap.add((a * Walls, b * Walls))
+            
+
+# Other cubes (TO BE ADDED)
