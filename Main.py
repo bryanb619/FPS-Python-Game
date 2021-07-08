@@ -1,62 +1,65 @@
-# Main FILE
+"""Main FILE"""
 
-# imports
+# Python Modules
+import pygame, math
 
-# Pygame import
-import pygame 
-# import settings from AppSettings.py
-from AppSettings import * 
-# import player Settings from App Settings
-from Player import PlayerMovement
+# File import
+# Game Main Settings file
+from AppSettings import *
+
+# import player Settings from PlayerScript
+from PlayerScript import Player
+
 # Import Game Map
-from Map import GameWorld
-# for mathematics
-import math
-# import Ray Casting from Ray.py
-from Ray import RayCasting
+from Map import GameMap
 
-# Window initialization
+# Import Ray Casting from Ray.py
+from Ray import ray_casting
+
+
+"""Window initialization"""
 pygame.init()
 
-# Display set (Width & Height)
-ss = pygame.display.set_mode((Width, Height))
 
+""" Screen Configuration """
+ 
+# Width = X(800), Height = Y(600)
+Screen = pygame.display.set_mode((x, y))
 # Screen frames
 clock = pygame.time.Clock()
 
-# internal variable
-Player = PlayerMovement()
+# Internal Variable for calling movement function from main
+player = Player()
 
-# App close system
+# Call for drawing Objects
 
+#Scene = Objects(Screen)
+
+""" App close system Loop """
 while True:
+    # Look for event quit
     for event in pygame.event.get():
-        # if quit is pressed, app will quit
+         # if "quit" is pressed, app will quit
         if event.type == pygame.QUIT:
-            # Kill app
+            # Kill Game
             exit()
-    # in Player.py get movement function (keys) 
-    Player.movement()
-    #Screen fill color, uses AppSettings Color Scheme
-    ss.fill(Black)
+            
+    # call movement function (Calls for detected keys) 
+    player.movement()
     
-    #
-    RayCasting(ss, Player.position, Player.angle)
+    #Screen fill color, uses AppSettings Color Scheme "Black"
+    Screen.fill(Color2)
     
-    # Player (for the moment!)
-    #pygame.draw.circle(ss,Green,(int(Player.x), int(Player.y)),12)
+    # Ground Drawing
+    pygame.draw.rect(Screen, Color4, (0, half_x, x, half_x))
     
-    #  Line 
-    #pygame.draw.line(ss, Green, Player.position,(Player.x + Width * math.cos(Player.angle),Player.y + Width * math.sin(Player.angle)))
+    # Scenario display
+    ray_casting(Screen, player.pos, player.angle)
     
-    # Map Drawing
-    #for x,y in GameWorld:
-        #pygame.draw.rect(ss, Gray, (x,y, Tile, Tile), 2)
-    
-    # 
+    # Displays what was rendered
     pygame.display.flip()
+    
     # Game FPS Standard 60 FPS
-    clock.tick(Fps)
-    
-    
+    clock.tick(FPS)
+   
             

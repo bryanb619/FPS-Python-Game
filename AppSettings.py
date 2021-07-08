@@ -1,51 +1,66 @@
 # General settings and data variables for game configuration
 
-#
+# Modules
 import math
 
-# Screen Settings
-Width =800 # Width of screen
-Height = 600 # Height of screen
-# Frames per second
-Fps = 60
-# Game Tiles
-Tile = 100
 
-# Centering player
-HalfWidth = Width // 2  
-HalfHeight = Height // 2
+"""Screen Configuration"""
 
-# Player Settings
-playerPosition = (HalfWidth, HalfHeight)
-#
-playerAngle = 0
-# speed
-playerSpeed = 2
+x = 800 # Width
+y = 600 # Height
+# Frames Per Second Limit
+FPS = 60 
 
-# Casting Settings
 
-# Player field of view
+"""Camera position"""
+
+half_x = x // 2
+half_y = y // 2
+
+
+"""Game Mapping"""  
+
+# Walls
+walls = 100
+
+
+""" Ray Casting settings"""
+
+# Player Point of View
 pView = math.pi / 3
-# View divided per 2
-HalfView = pView / 2
-# Number of rays
-rays = 120
-# delta = field of view / rays
-deltaAngle = pView / rays
-# Maximum Depth
-FullDepth = 800
 
-# 3D VIEW Modification
-Distance = rays / (2 * math.tan(HalfView))
-# Calculation of wall distance & Height
-projC = Distance *Tile
-Scale = Width // rays
+# Half Point of View
+half_pView = pView / 2
 
-# Colors (RGB CODES)
+# Depth and Angle
+number_rays = 80
+max_depth = 800
+angle = pView / number_rays
 
-Black = (0,0,0) # Black
-White = (255,255,255) # White
+# Object Distance Configuration
+dist = number_rays / (2 * math.tan(half_pView))
+
+# Projection 3D
+proj_3d = 3 * dist * walls
+
+# Scale Distance
+scale = x // number_rays
+
+# player settings
+player_pos = (half_x, half_y)
+
+
+"""RGB Color CODES"""
+
+# Base colors 
+Color1 = (255, 255, 255) # White
+Color2 = (0, 0, 0) # Black
 
 # Other collors
-Green = (0,220,0) # Green
-Gray = (128,128,128) # Gray
+Color3 = (0,220,0) # Green
+Color4 = (128,128,128) # Gray
+Color5 = (0,0,204) # Blue
+Color6 = (102, 255, 102) # Unused Green
+Color7 = (23, 54, 5) # Dark Green
+# Color8 = 
+# Color9 =
