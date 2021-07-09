@@ -1,4 +1,4 @@
-"Ray Settings File"
+"""Ray Settings File"""
 
 # Modules
 import pygame, math
@@ -8,7 +8,8 @@ from AppSettings import *
 # Mapping
 from Map import GameMap
 
-""" Raycasting """
+"""Raycasting """
+ 
 def ray_casting(Screen, player_pos, player_angle):
     
     cur_angle = player_angle - half_pView
@@ -37,36 +38,51 @@ def ray_casting(Screen, player_pos, player_angle):
                 c = 255 / (1 + depth * depth * 0.00002)
                 Shade = (c, c // 2, c // 3)
                 
-                """ Walls insertion drawing"""
+                """Walls insertion drawing"""
                 pygame.draw.rect(Screen, Shade, (ray * scale, half_y - proj_height // 2, scale, proj_height))
                 # Read once this if, so break it ( CORRIGIR)
                 break
         cur_angle += angle
-        """    
-        cur_angle += angle
-        def mapping(a, b):
-            return (a // walls) * walls, (b // walls) * walls
+       
+"""def mapping(a, b):
+    return (a // walls) * walls, (b // walls) * walls
         
-        def ray_casting (Screen, player_pos, player_angle):
-            ox, oy = player_pos
-            xm, ym  = mapping(ox, oy)
-            cur_angle = - half_pView
+def ray_casting (Screen, player_pos, player_angle):
+    ox, oy = player_pos
+    xm, ym  = mapping(ox, oy)
+    cur_angle = - half_pView
             
-            for ray in range(number_rays):
-                sin_a = math.sin(cur_angle)
-                cos_a = math.cos(cur_angle)
+    for ray in range(number_rays):
+        sin_a = math.sin(cur_angle)
+        cos_a = math.cos(cur_angle)
                 
-                x, dx = (xm + walls, 1) if cos_a >= 0 else (xm, -1)
+        # Vertical
+        X, dx = (xm + walls, 1) if cos_a >= 0 else (xm, -1)
                     
-                for i in range(0 , X, walls):
-                    depthRay = (x -ox) / cos_a
-                    y = oy + depthRay + sin_a
-                    if mapping(x + dx, y) in GameMap:
-                        break
-                    x += dx * walls
+        for i in range(0 , x, walls):
+            depthVertical = (X -ox) / cos_a
+            Y = oy + depthVertical + sin_a
+            if mapping(X + dx, Y) in GameMap:
+                break
+            X += dx * walls
                 
-                # horizontal 
-                for j in range(0, Y, walls): """
+        # horizontal 
+        Y, dy = (ym + walls, 1) if sin_a >=0 else (ym, -1)
+        for i in range(0, y, walls): 
+            depthHoz = (Y - oy) / sin_a
+            X = ox + depthHoz * cos_a
                     
+            if mapping(X, Y + dy) in GameMap:
+                break
+            Y += dy * walls
             
-
+        depth = depthVertical if depthVertical < depthHoz else depthHoz
+        depth *= math.cos(player_angle - cur_angle)
+        proj_height = proj_3d / depth
+        c = 255 / (1 + depth * depth * 0.00002)
+        Shade = (c, c // 2, c // 3)
+                
+        "Walls insertion drawing"
+        pygame.draw.rect(Screen, Shade, (ray * scale, half_y - proj_height // 2, scale, proj_height))
+        cur_angle += angle
+"""
