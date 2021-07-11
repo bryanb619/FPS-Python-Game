@@ -19,10 +19,10 @@
 <div style="page-break-after:always"></div>
 
 
-<h2>Tabela de conteúdos</h2>
+<h2>Tabela de Conteúdos</h2>
 
 <ol>
-<li><p><a href="#informaçãobase">Informação Base</a></p></li>
+<li><a href="#informaçãobase">Informação Base</a></li>
 <li><a href="#sumario">Sumário do Projecto</a>
 <li><a href="#movimentos">Movimentos & Rotação do Jogador</a>
 <li><a href="#cenario">Cenário e Implementação 3D</a>
@@ -77,10 +77,13 @@ O jogador consegue movimentar-se para todas as direcções, rodar a câmara de v
 
 **Controlos Câmara**
 * **Rodar Câmara para esquerda:** Seta Esquerda
-* **Rodar Câmara para esquerda:** Seta Direita
+* **Rodar Câmara para direita:** Seta Direita
 
 **Controlos avançados**
-* **Sprint:** Tecla Shift
+* **Sprint:** Tecla Shift + W
+
+**Sair do Jogo**
+* **Exit:** Tecla Esc
 
 </p>
 
@@ -107,7 +110,7 @@ Após isso, foram então definidas as Teclas do teclado que permitem controlar e
 * **Rodar Câmara para esquerda:** Seta Direita
 
 **Controlos avançados**
-* **Sprint:** Tecla Shift
+* **Sprint:** Tecla Shift + WS
 
 Foram definidos também os controlos de rato para movimentar o jogador:
 
@@ -129,9 +132,12 @@ Sendo assim, foram criados os limites do mapa, colocando **I** nos cantos superi
 
 Para transformar este mapa 2D numa vista 3D, é utilizada a fórmula que se encontra no ficheiro ***py: AppSettings***:
 
+Multiplicamos ainda distancia por 3, para optimizar a escala
+Isso faz com que o escala do cenário seja "aumentada"
+
 `proj_3d = 3 * dist * walls`
 
-Sendo que o 3 serve para projectar o mundo de forma mais agradável para o jogador. 
+Sendo que a multiplicação por da distância por 3 serve para projectar e optimizar a escala tornando assim a vista e a navegação pelo mapa de forma mais agradável para o jogador devido à escala mais realista. 
 
 </p>
 
@@ -145,7 +151,7 @@ Para definir as configurações do jogo, foi criado um ficheiro ***py: AppSettin
 
 **Configurações de ecrã**
 * Largura e Altura da tela de jogo
-* FPS (Frames por Second)
+* FPS (Valor Limite de Frames por Second)
 
 **Configurações Ray Casting**
 * Ponto de Vista
@@ -169,7 +175,7 @@ Para definir as configurações do jogo, foi criado um ficheiro ***py: AppSettin
 * Criação do ficheiro ***Map***
 * Criação do ficheiro ***AppSettings***
 * Configurações de mapa
-* Realização do ficheiro ***postmortem***
+* Realização do ficheiro ***Postmortem***
 
 **Sónia Raposo**
 * Organização e correções de código
