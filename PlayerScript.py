@@ -3,6 +3,8 @@
 # Modules
 import pygame, math
 
+from pygame.locals import*
+
 # Automatic Module import
 from pygame.constants import KEYDOWN, K_DOWN, K_LSHIFT, K_UP
 
@@ -18,8 +20,12 @@ player_angle = 0 # Horizontal
 # Speed
 player_speed = 1 # Horizontal Speed
 
+PlayerSide = 1
+PlayerBack = 0.2
+
+
 # Sprint speed
-Sprint = 1.2 # Horizontal sprinting speed
+Sprint = 1.3 # Horizontal sprinting speed
 
 # player does not jump from begining, so False
 isJumping = False # will be changed to true as soon as "SPACE" is hit
@@ -53,6 +59,15 @@ class Player:
         """ Keyboard detection """
         keys = pygame.key.get_pressed()
         
+        
+        
+        # Special movements   
+            
+        # Forward and Sprint "w + Left Shift" 
+        if keys[pygame.K_w & K_LSHIFT]:
+            self.x += Sprint * player_speed * cos_a
+            self.y += Sprint * player_speed * sin_a
+        
         # General Movement
         
         # Forward "k"
@@ -67,11 +82,11 @@ class Player:
         if keys[pygame.K_a]:
             self.x += player_speed * sin_a
             self.y += -player_speed * cos_a
+            
         # Right "d"   
         if keys[pygame.K_d]:
             self.x += -player_speed * sin_a
             self.y += player_speed * cos_a 
-            
             
         # Left Rotation  "Left Arrow"
         if keys[pygame.K_LEFT]:
@@ -80,15 +95,16 @@ class Player:
         # Right Rotaion "Right Arrow"
         if keys[pygame.K_RIGHT]:
             self.angle += 0.02
+               
+        #   UI Controls  
         
-        # Special movements   
+        # Quit Game "ESC"
+        if keys[pygame.K_ESCAPE]: 
+            quit()
             
-        # Forward and Sprint "w + Left Shift" 
-        if keys[pygame.K_w and K_LSHIFT]:
-            self.x += Sprint* cos_a
-            self.y += Sprint * sin_a 
-            
-            
+        
+        """ Mouse detection"""
+
         #if not(isJumping):  
             # Jump "Backspace"
             # if keys[pygame.K_SPACE]:
@@ -97,13 +113,7 @@ class Player:
             
             
        # Rotation (TO UPDATE TO MOUSE!)  
-        
-        """Key List Mouse""" # (TO BE FIXED) 
-        mx, my = pygame.mouse.get_pos()
-
-        # Mouse Control Variables
-        left_click = False
-        right_click = False
+    
 
         # Mouse Controls
 
