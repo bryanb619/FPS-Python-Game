@@ -17,33 +17,40 @@ from Map import GameMap
 from Ray import ray_casting
 
 
-"""Window initialization"""
+"""Pygame Window initialization"""
+
+# initiates Game Window
 pygame.init()
 
+# Sets Window caption
+pygame.display.set_caption("FPS Application Like")
 
-""" Screen Configuration """
+# Hides mouse cursor ( still there but invisible)
+pygame.mouse.set_cursor((8,8),(0,0),(0,0,0,0,0,0,0,0),(0,0,0,0,0,0,0,0))
+
+""" Screen  """
  
 # Width = X(800), Height = Y(600)
-Screen = pygame.display.set_mode((x, y))
+Screen = pygame.display.set_mode((res_x, res_y))
+
 # Screen frames
 clock = pygame.time.Clock()
 
 # Internal Variable for calling movement function from main
 player = Player()
 
-# Call for drawing Objects
-
-#Scene = Objects(Screen)
-
 """ App close system Loop """
+
 while True:
     # Look for event quit
     for event in pygame.event.get():
          # if "quit" is pressed, app will quit
         if event.type == pygame.QUIT:
             # Kill Game
-            exit()
+            quit()
             
+    """Player, Ground and display config  """       
+     
     # call movement function (Calls for detected keys) 
     player.movement()
     
@@ -51,7 +58,10 @@ while True:
     Screen.fill(Color2)
     
     # Ground Drawing
-    pygame.draw.rect(Screen, Color4, (0, half_y, x, half_y))
+    pygame.draw.rect(Screen, Color4, (0, half_y, res_x, half_y))
+    
+    # Sky drawing
+    pygame.draw.rect(Screen, Color8, (0, 0, res_x, half_y))
     
     # Scenario display
     ray_casting(Screen, player.pos, player.angle)
