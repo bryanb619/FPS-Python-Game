@@ -9,7 +9,9 @@
 
 <h2><center> Introdução à Matemática e Física Para Videojogos I </center></h2>  
 
-<center><p><img src="https://i.pinimg.com/originals/16/e0/cd/16e0cd6458ad65e76102f23ebd72c719.jpg" width="650"  /></p></center>
+<center><p><img src="https://i.ibb.co/ZVnHHPH/unknown.png" width="650"  /></p></center>
+
+<h4><center>Projecto de Recurso IMFJ1 "FPS-Like" </center></h4>
 
 
 <center>Versão # 1.0</center>
@@ -40,7 +42,7 @@
 
 **Nome do Projecto**
 
-Projeto de Recurso IMFJ1 "FPS-Like"
+Projecto de Recurso IMFJ1 "FPS-Like"
 
 
 **Membros do Projecto**
