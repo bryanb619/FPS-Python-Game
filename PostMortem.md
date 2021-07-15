@@ -9,12 +9,13 @@
 
 <h2><center> Introdução à Matemática e Física Para Videojogos I </center></h2> 
 
-<center><p><img src="https://i.pinimg.com/originals/16/e0/cd/16e0cd6458ad65e76102f23ebd72c719.jpg" width="650"  /></p></center>
+<center><p><img src="https://i.ibb.co/ZVnHHPH/unknown.png" width="650"  /></p></center>
 
+<h4><center>Projecto de Recurso IMFJ1 "FPS-Like" </center></h4>
 
 <center>Versão # 1.0</center>
 
-<center>Terça, Julho 13, 2021</center>
+<center>Terça, Julho 15, 2021</center>
 
 <div style="page-break-after: always"></div>
 
@@ -73,7 +74,7 @@ Steven Hall 22001753
 
 <h3>2. Sumário do Projecto <a name="sumario"></a></h3>
 
-Este projecto consiste na construção de um ambiente "FPS-Like" 3D que consiste num mapa com paredes e objectos 3D onde é possivel controlar um jogador em primeira pessoa.
+Este projecto consiste na construção de um ambiente "FPS-Like" 3D que consiste num mapa com paredes onde é possivel controlar um jogador em primeira pessoa.
 
 O jogador consegue movimentar-se para todas as direcções, rodar a câmara de visão e correr, utilizando as teclas respectivas:
 

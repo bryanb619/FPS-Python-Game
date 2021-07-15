@@ -16,7 +16,7 @@
 
 <center>Versão # 1.0</center>
 
-<center>Terça, Julho 13, 2021</center>
+<center>Terça, Julho 15, 2021</center>
 
 <div style="page-break-after:always"></div>
 
@@ -67,7 +67,7 @@ Steven Hall 22001753
 <h3>2. Sumário do Projecto <a name="sumario"></a></h3>
 
 <p>
-Este projecto consiste na construção de um ambiente "FPS-Like" 3D que consiste num mapa com paredes e objectos 3D onde é possivel controlar um jogador em primeira pessoa.
+Este projecto consiste na construção de um ambiente "FPS-Like" 3D que consiste num mapa com paredes onde é possivel controlar um jogador em primeira pessoa.
 
 O jogador consegue movimentar-se para todas as direcções, rodar a câmara de visão e correr, utilizando as teclas respectivas:
 
